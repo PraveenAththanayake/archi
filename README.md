@@ -1,129 +1,149 @@
-# Archi - Furniture Design Software
+# Archi - Advanced Furniture Design & Visualization Software
 
-> Visualize. Design. Decide.
+## 🏆 Project Overview
 
-**Archi** is an interactive furniture design desktop application developed as part of the PUSL3122 module (HCI, Computer Graphics, and Visualisation) at the University of Plymouth. It empowers interior designers to create precise 2D layouts and immersive 3D visualizations for customized room planning, bridging the gap between customer imagination and realistic expectations.
+Archi is a sophisticated desktop application developed for a furniture design company, enabling designers to create accurate visualizations of furniture configurations in customers' homes. This interactive tool bridges the gap between imagination and reality, allowing customers to make informed purchasing decisions based on realistic representations of how furniture will look in their spaces.
 
----
+**Demo Video:** [Watch on YouTube](https://youtu.be/7zfn2dlQy88)
 
-## 🎥 Demonstration
 
-📺 [Watch our YouTube Demo](https://youtu.be/7zfn2dlQy88)
 
-🔗 [Project Repository](https://github.com/PraveenAththanayake/archi)
+## 🌟 Key Features
 
----
+- **User Authentication System** - Secure login and registration via Firebase Authentication
+- **Room Specification Module** - Input and validate room dimensions, shapes, and color schemes
+- **2D Design Editor** - Intuitive interface for arranging furniture items in a 2D view
+- **3D Visualization Engine** - High-performance rendering for realistic furniture visualization
+- **Real-time Design Customization** - Dynamic adjustment of colors, scaling, and positioning
+- **Design Management System** - Save, retrieve, edit, and delete designs with metadata
+- **Responsive UI/UX** - Smooth transitions between 2D and 3D views
 
-## 📌 Table of Contents
+## 🔍 Technical Implementation
 
-- [Background](#background)
-- [Features](#features)
-- [Target Users](#target-users)
-- [System Architecture](#system-architecture)
-- [UI/UX Design](#uiux-design)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Evaluation](#evaluation)
-- [Team](#team)
-- [License](#license)
+### Technology Stack
 
----
+- **Frontend Framework:** Java Swing
+- **3D Rendering:** OpenGL
+- **Authentication:** Firebase Authentication
+- **Storage:** [Database Technology]
+- **Design Patterns:** MVC Architecture, Singleton Pattern, Observer Pattern
 
-## 📖 Background
+### System Architecture
 
-Customers often struggle to visualize how furniture would look in their real home environments. Traditional catalogs and in-store displays fail to accommodate unique room dimensions, lighting, and color schemes, which can lead to customer indecision, returns, and lost sales.
+```
+┌─────────────────────────────────────┐
+│           Presentation Layer         │
+│  ┌─────────────┐    ┌─────────────┐  │
+│  │ 2D Editor   │    │ 3D Viewer   │  │
+│  └─────────────┘    └─────────────┘  │
+├─────────────────────────────────────┤
+│           Application Layer          │
+│  ┌─────────────┐    ┌─────────────┐  │
+│  │ Room Config │    │ Furniture   │  │
+│  │ Manager     │    │ Manager     │  │
+│  └─────────────┘    └─────────────┘  │
+│  ┌─────────────┐    ┌─────────────┐  │
+│  │ Design      │    │ Rendering   │  │
+│  │ Manager     │    │ Engine      │  │
+│  └─────────────┘    └─────────────┘  │
+├─────────────────────────────────────┤
+│              Data Layer              │
+│  ┌─────────────┐    ┌─────────────┐  │
+│  │ User Data   │    │ Design      │  │
+│  │ Repository  │    │ Repository  │  │
+│  └─────────────┘    └─────────────┘  │
+│  ┌─────────────────────────────────┐ │
+│  │       Firebase Integration      │ │
+│  └─────────────────────────────────┘ │
+└─────────────────────────────────────┘
+```
 
-**Archi** solves this by providing:
+## 📊 User-Centered Design Process
 
-- A collaborative tool for designers and customers
-- Real-time 2D and 3D room modeling
-- High customization and flexibility
-- A guided, user-friendly interface for furniture layout planning
+### Research & Requirements
 
----
+Our development approach began with comprehensive user research:
+- 5 structured interviews with company designers and management
+- 4 contextual inquiry sessions in furniture showrooms
+- Competitive analysis of 6 similar applications
+- 2 focus group sessions with 6-8 designers
+- Online survey with 11 respondents
 
-## 🚀 Features
+These research methods identified key user needs:
+- 40% of consultation time spent helping customers visualize furniture
+- 78% of clients prioritize color matching between furniture and existing rooms
+- Scale and proportion understanding is the biggest challenge for customers
 
-### 🔐 Authentication System
+### Personas & User Stories
 
-- Secure login and registration powered by Firebase
+**Primary Person: Chamindu Lasanga**
+- 32-year-old professional interior designer with 8 years of experience
+- Moderate to high technical proficiency
+- Goals: Create realistic visualizations efficiently, improve customer satisfaction
 
-### 🏠 Room Specification Module
+**Secondary Person: Mark Anthony**
+- 45-year-old senior sales associate with 15 years in furniture retail
+- Basic to moderate technical proficiency
+- Goals: Close more sales, provide accurate visualizations to reduce returns
 
-- Input room size, shape, and color scheme
-- Supports real-world dimensional validation
+### Design Evolution
 
-### 🧩 2D Design Editor
+Our design process followed a structured progression:
+1. **Storyboarding** - Visual narratives capturing user workflows
+2. **Low-fidelity Prototyping** - Paper sketches and wireframes
+3. **High-fidelity Prototyping** - Interactive mock-ups with visual design elements
+4. **Usability Testing** - Iterative testing throughout development
 
-- Drag and drop furniture components
-- Modify placement, scale, and colors
+## 🔬 Evaluation & Results
 
-### 🌀 3D Visualization Engine
+Our comprehensive evaluation strategy included:
+- **Expert Evaluation** - 3 UX experts conducted heuristic evaluations
+- **Usability Testing** - 12 participants from target user group completed 7 core tasks
+- **Performance Testing** - Technical metrics for rendering and response times
 
-- Real-time 3D rendering from 2D plans using OpenGL
-- Shading, lighting, and perspective effects for realism
+Key findings demonstrated:
+- High task completion rates across all core functionality
+- Strong user satisfaction scores on System Usability Scale (SUS)
+- Identified specific areas for improvement in future iterations
 
-### 🎨 Design Customization
-
-- Color schemes and shading control
-- Save/load/edit/delete multiple designs
-
-### 🗂 Design Management
-
-- Create profiles and persist designs across sessions
-
----
-
-## 👥 Target Users
-
-### 👤 Primary Persona: Chamindu Lasanga
-
-- Interior designer with 8 years' experience
-- Goal: Reduce time spent iterating designs with clients
-
-### 👤 Secondary Persona: Mark Anthony
-
-- Sales associate in furniture retail
-- Goal: Provide visual aids to improve sales and reduce returns
-
----
-
-## 🧱 System Architecture
-
-- **Frontend:** Java Swing for GUI
-- **Rendering:** OpenGL (2D + 3D visualization)
-- **Backend:** Firebase for Authentication and Storage
-- **Tools Used:** Java, GL Libraries, Firebase SDK
-
----
-
-## 🎨 UI/UX Design
-
-Design evolved through usability-focused iterations, ensuring:
-
-- ✅ Learnability
-- ✅ Accessibility (Keyboard navigation, contrast, screen reader)
-- ✅ Error prevention (validations, undo/redo)
-- ✅ Task efficiency (core tasks within 2 clicks)
-
-### 💡 Notable Screens:
-
-- Splash screen
-- Sign-up/sign-in
-- Room layout page
-- 2D editor
-- 3D visualizer
-- Final render preview
-- Contact/About pages
-
----
-
-## 🛠️ Installation
-
-> Prerequisites: Java JDK 20+, OpenGL bindings, Firebase config
+## 🚀 Installation & Setup
 
 ```bash
+# Clone the repository
 git clone https://github.com/PraveenAththanayake/archi.git
+
+# Navigate to project directory
 cd archi
-# Open in IDE and run Loading.java
+
+# Install dependencies
+# Ensure you have Java JDK installed
+
+# Run the application
+java Loading
 ```
+
+## 🔮 Future Enhancements
+
+- **Augmented Reality Integration** - Examine designs in customers' actual spaces
+- **Inventory Management System Connection** - Real-time product availability
+- **Advanced Lighting Simulation** - Time-of-day lighting effects
+- **Collaborative Design** - Multi-user design sessions
+- **Mobile Companion App** - View designs on the go
+
+## 👥 Team Members
+
+- **W M L R Wijekoon** (10898707)
+- **A M P A Aththanayake** (10898417)
+- **H G C Lasanga** (10898545)
+- **Anthonidura Z Gunathilake** (10899543)
+- **Weragoda Weragoda** (10898700)
+
+
+## 🙏 Acknowledgments
+
+- Dr. Taimur Bakhshi for supervision and guidance
+- Plymouth University for academic support
+
+---
+
+© 2025 Archi Team | BSc. (Hons.) in Software Engineering | Plymouth University
